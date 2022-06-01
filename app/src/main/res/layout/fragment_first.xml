@@ -16,19 +16,23 @@
         tools:context=".presentation.ui.FirstFragment">
 
         <TextView
+            android:gravity="end"
             android:id="@+id/calculation"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:textSize="36sp"
+            app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintTop_toTopOf="parent"
             tools:text="display" />
 
         <TextView
+            android:gravity="end"
             android:id="@+id/result"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:textSize="36sp"
+            app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintTop_toBottomOf="@id/calculation"
             tools:text="display" />
@@ -63,6 +67,7 @@
                     android:layout_margin="5dp"
                     android:layout_weight="1"
                     android:backgroundTint="#302A49"
+                    android:onClick="@{() -> viewModel.addPlusMinus()}"
                     android:text="@string/plus_minus"
                     android:textSize="24sp" />
 
@@ -74,6 +79,7 @@
                     android:layout_weight="1"
                     android:backgroundTint="#302A49"
                     android:text="@string/factorial"
+                    android:onClick="@{() -> viewModel.calculate('^')}"
                     android:textSize="24sp" />
 
                 <Button
@@ -238,6 +244,7 @@
                     android:layout_margin="5dp"
                     android:layout_weight="1"
                     android:text="@string/dot"
+                    android:onClick="@{() -> viewModel.addDot('.')}"
                     android:textSize="24sp" />
 
                 <Button
