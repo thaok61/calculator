@@ -44,8 +44,8 @@
         vestibulum. Fusce dictum libero quis erat maximus, vitae volutpat diam dignissim.
     </string>
     <string name="clear">C</string>
-    <string name="parenthese">( )</string>
-    <string name="percentage">%</string>
+    <string name="plus_minus">+/-</string>
+    <string name="factorial">^</string>
     <string name="division">÷</string>
     <string name="seven">7</string>
     <string name="eight">8</string>
