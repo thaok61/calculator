@@ -3,7 +3,9 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
+        <entry key="..\:/Calculator/app/src/main/res/layout-land/fragment_first.xml" value="0.2625" />
         <entry key="..\:/Calculator/app/src/main/res/layout/activity_main.xml" value="0.11302083333333333" />
+        <entry key="..\:/Calculator/app/src/main/res/layout/content_main.xml" value="0.1" />
         <entry key="..\:/Calculator/app/src/main/res/layout/fragment_first.xml" value="0.22826086956521738" />
         <entry key="..\:/Calculator/app/src/main/res/layout/fragment_second.xml" value="0.11302083333333333" />
       </map>

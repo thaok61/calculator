@@ -1,0 +1,294 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+        <variable
+            name="viewModel"
+            type="com.me.calculator.presentation.viewmodel.CalculatorViewModel" />
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        tools:context=".presentation.ui.FirstFragment">
+
+        <TextView
+            android:id="@+id/calculation"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:gravity="end"
+            android:paddingHorizontal="32dp"
+            android:textSize="36sp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            tools:text="display" />
+
+        <TextView
+            android:id="@+id/result"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:gravity="end"
+            android:paddingHorizontal="32dp"
+            android:textSize="36sp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/calculation"
+            tools:text="display" />
+
+        <TableLayout
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:paddingHorizontal="32dp"
+            android:paddingBottom="8dp"
+            android:weightSum="5"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/result">
+
+            <TableRow
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1">
+
+                <Button
+                    android:id="@+id/clear"
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_margin="5dp"
+                    android:layout_weight="1"
+                    android:backgroundTint="#DD2C00"
+                    android:onClick="@{() -> viewModel.clear()}"
+                    android:text="@string/clear"
+                    android:textSize="24sp" />
+
+                <Button
+                    android:id="@+id/plus_minus"
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_margin="5dp"
+                    android:layout_weight="1"
+                    android:backgroundTint="#302A49"
+                    android:onClick="@{() -> viewModel.addPlusMinus()}"
+                    android:text="@string/plus_minus"
+                    android:textSize="24sp" />
+
+                <Button
+                    android:id="@+id/factorial"
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_margin="5dp"
+                    android:layout_weight="1"
+                    android:backgroundTint="#302A49"
+                    android:onClick="@{() -> viewModel.calculate('^')}"
+                    android:text="@string/factorial"
+                    android:textSize="24sp" />
+
+                <Button
+                    android:id="@+id/division"
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_margin="5dp"
+                    android:layout_weight="1"
+                    android:backgroundTint="#302A49"
+                    android:onClick="@{() -> viewModel.calculate('÷')}"
+                    android:text="@string/division"
+                    android:textSize="24sp" />
+            </TableRow>
+
+            <TableRow
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1">
+
+                <Button
+                    android:id="@+id/seven"
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_margin="5dp"
+                    android:layout_weight="1"
+                    android:onClick="@{() -> viewModel.addNum('7', 1)}"
+                    android:text="@string/seven"
+                    android:textSize="24sp" />
+
+                <Button
+                    android:id="@+id/eight"
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_margin="5dp"
+                    android:layout_weight="1"
+                    android:onClick="@{() -> viewModel.addNum('8',1)}"
+                    android:text="@string/eight"
+                    android:textSize="24sp" />
+
+                <Button
+                    android:id="@+id/nine"
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_margin="5dp"
+                    android:layout_weight="1"
+                    android:onClick="@{() -> viewModel.addNum('9',1)}"
+                    android:text="@string/nine"
+                    android:textSize="24sp" />
+
+                <Button
+                    android:id="@+id/multiplication"
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_margin="5dp"
+                    android:layout_weight="1"
+                    android:backgroundTint="#302A49"
+                    android:onClick="@{() -> viewModel.calculate('×')}"
+                    android:text="@string/multiplication"
+                    android:textSize="24sp" />
+            </TableRow>
+
+            <TableRow
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1">
+
+                <Button
+                    android:id="@+id/four"
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_margin="5dp"
+                    android:layout_weight="1"
+                    android:onClick="@{() -> viewModel.addNum('4',1)}"
+                    android:text="@string/four"
+                    android:textSize="24sp" />
+
+                <Button
+                    android:id="@+id/five"
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_margin="5dp"
+                    android:layout_weight="1"
+                    android:onClick="@{() -> viewModel.addNum('5',1)}"
+                    android:text="@string/five"
+                    android:textSize="24sp" />
+
+                <Button
+                    android:id="@+id/six"
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_margin="5dp"
+                    android:layout_weight="1"
+                    android:onClick="@{() -> viewModel.addNum('6',1)}"
+                    android:text="@string/six"
+                    android:textSize="24sp" />
+
+                <Button
+                    android:id="@+id/subtraction"
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_margin="5dp"
+                    android:layout_weight="1"
+                    android:backgroundTint="#302A49"
+                    android:onClick="@{() -> viewModel.calculate('−')}"
+                    android:text="@string/subtraction"
+                    android:textSize="24sp" />
+            </TableRow>
+
+            <TableRow
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1">
+
+                <Button
+                    android:id="@+id/one"
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_margin="5dp"
+                    android:layout_weight="1"
+                    android:onClick="@{() -> viewModel.addNum('1',1)}"
+                    android:text="@string/one"
+                    android:textSize="24sp" />
+
+                <Button
+                    android:id="@+id/two"
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_margin="5dp"
+                    android:layout_weight="1"
+                    android:onClick="@{() -> viewModel.addNum('2',1)}"
+                    android:text="@string/two"
+                    android:textSize="24sp" />
+
+                <Button
+                    android:id="@+id/three"
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_margin="5dp"
+                    android:layout_weight="1"
+                    android:onClick="@{() -> viewModel.addNum('3',1)}"
+                    android:text="@string/three"
+                    android:textSize="24sp" />
+
+                <Button
+                    android:id="@+id/plus"
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_margin="5dp"
+                    android:layout_weight="1"
+                    android:backgroundTint="#302A49"
+                    android:onClick="@{() -> viewModel.calculate('+')}"
+                    android:text="@string/plus"
+                    android:textSize="24sp" />
+
+            </TableRow>
+
+            <TableRow
+                android:layout_width="0dp"
+                android:layout_height="0dp"
+                android:layout_weight="1">
+
+                <Button
+                    android:id="@+id/dot"
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_margin="5dp"
+                    android:layout_weight="1"
+                    android:onClick="@{() -> viewModel.addDot('.')}"
+                    android:text="@string/dot"
+                    android:textSize="24sp" />
+
+                <Button
+                    android:id="@+id/zero"
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_margin="5dp"
+                    android:layout_weight="1"
+                    android:onClick="@{() -> viewModel.addNum('0',1)}"
+                    android:text="@string/zero"
+                    android:textSize="24sp" />
+
+                <Button
+                    android:id="@+id/double_zero"
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_margin="5dp"
+                    android:layout_weight="1"
+                    android:onClick="@{() -> viewModel.addNum('0',2)}"
+                    android:text="@string/double_zero"
+                    android:textSize="24sp" />
+
+                <Button
+                    android:id="@+id/equal"
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_margin="5dp"
+                    android:layout_weight="1"
+                    android:backgroundTint="#3ffff9"
+                    android:onClick="@{() -> viewModel.equal()}"
+                    android:text="@string/equal"
+                    android:textColor="@color/black"
+                    android:textSize="24sp" />
+            </TableRow>
+        </TableLayout>
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>
